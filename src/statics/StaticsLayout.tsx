@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Header from "./Header";
 import { Outlet } from "react-router-dom";
-import Footer from "@/components/Footer";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const StaticsLayout: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);

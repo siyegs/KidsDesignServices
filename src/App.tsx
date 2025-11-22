@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 import StaticsLayout from "./statics/StaticsLayout";
 import Services from "./statics/Services";
@@ -8,15 +8,12 @@ import Consultation from "./statics/Consultation";
 import Plans from "./statics/Plans";
 import Blogs from "./statics/Blogs";
 
-const queryClient = new QueryClient();
 
 const App: React.FC = () => {
   return (
-    <QueryClientProvider client={queryClient}>
         <Router>
           <AppContent />
         </Router>
-    </QueryClientProvider>
   );
 };
 
@@ -26,7 +23,7 @@ const AppContent: React.FC = () => {
     <Routes>
 
       <Route element={<StaticsLayout/>}>
-        <Route path="/services" element={<Services/>}/>
+        <Route path="/" element={<Services/>}/>
         <Route path="/industries" element={<Industries/>}/>
         <Route path="/consultation" element={<Consultation/>}/>
         <Route path="/plans" element={<Plans/>}/>
